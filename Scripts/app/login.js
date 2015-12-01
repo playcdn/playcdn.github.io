@@ -85,8 +85,10 @@
 		function redirect(url) {
 			if (window.opener != null) {
 				window.opener.loginSuccess(aes.key(), url);
-				window.close();
-			} else window.top.location = url;
+				window.top.location = '/app/Thankyou.html?action=close';
+			} else {
+				window.top.location = '/app/Thankyou.html?action=' + url;
+			}
 		}
 
 		function LoginAPI(action, params, datatype, success, fail) {

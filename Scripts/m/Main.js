@@ -4,24 +4,6 @@ var allow = parser.hostname == "" || parser.hostname == window.location.hostname
 if (!allow) {
 	location.href = '/app/img/blank.html';
 } else {
-    var version = document.querySelector('script[data-main]').getAttribute('data-main').split('=')[1];
-    require.config({
-        //urlArgs: "v=" + document.querySelector('script[data-main]').getAttribute('data-main').split('=')[1],
-        baseUrl: "/core/Scripts",
-        paths: {
-            login: "app/login.js?v=" + version,
-            utils: "utils.js?v=" + version,
-            translate: "translate.js?v=" + version,
-            'jquery-original': ["https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min", "lib/jquery-1.11.2.min"],
-            jquery: 'app/jquery-noConflict',
-            aes: "lib/AES-3.1.2",
-            "aes-handler": "lib/aes-handler.js?v=" + version,
-            rsa: "lib/RSA-1.4",
-            "rsa-handler": "lib/rsa-handler.js?v=" + version,
-            text: "lib/text"
-        }
-    });
-
     require(['jquery', 'login', "/info/site?noext", 'translate', 'utils'], function ($, login, info, translate, utils) {
         /***API***/
         var API = function () {
