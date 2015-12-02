@@ -35,7 +35,9 @@
 			else Login(username, password);
 		}
 
+		var normalLogin = true;
 		this.ForceLogin = function (username, password) {
+			registerLogin = false;
 			Login(username, password);
 		}
 
@@ -83,11 +85,15 @@
 		}
 
 		function redirect(url) {
-			if (window.opener != null) {
-				window.opener.loginSuccess(aes.key(), url);
-				window.top.location = '/app/Thankyou.html?action=close';
+			if (registerLogin) {
+				window.location = url;
 			} else {
-				window.top.location = '/app/Thankyou.html?action=' + url;
+				if (window.opener != null) {
+					window.opener.loginSuccess(aes.key(), url);
+					window.top.location = '/app/Thankyou.html?action=close';
+				} else {
+					window.top.location = '/app/Thankyou.html?action=' + url;
+				}
 			}
 		}
 
