@@ -37,7 +37,7 @@
 
 		var normalLogin = true;
 		this.ForceLogin = function (username, password) {
-			registerLogin = false;
+			normalLogin = false;
 			Login(username, password);
 		}
 
@@ -85,7 +85,7 @@
 		}
 
 		function redirect(url) {
-			if (registerLogin) {
+			if (normalLogin) {
 				window.location = url;
 			} else {
 				if (window.opener != null) {
