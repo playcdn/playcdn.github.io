@@ -76,8 +76,8 @@
 			switch(errCode) {
 				//case "0": window.top.location = '/core/view/main.aspx' + window.location.search;break; //Success
 				//case "1005": window.top.location = "/core/SecurityQuestion.aspx" + window.top.location.search; break; //DeviceNotTrusted
-				case "0": redirect(window.top.location = '/core/view/main.aspx' + window.location.search); break; //Success
-				case "1005": redirect(window.top.location = "/core/SecurityQuestion.aspx" + window.top.location.search); break; //DeviceNotTrusted
+				case "0": redirect('/core/view/main.aspx' + window.location.search); break; //Success
+				case "1005": redirect('/core/SecurityQuestion.aspx' + window.top.location.search); break; //DeviceNotTrusted
 				case "1002": new translate().warning(errText, errCode, null, LoginAlert); break; //LoginFailed
 				case "1004": new translate().warning(errText, errCode, null, LoginAlert); break; //IpNotAllowed
 				default: new translate().warning(errText, errCode, null, LoginAlertReload);break;
