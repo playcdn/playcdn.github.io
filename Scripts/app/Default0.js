@@ -60,7 +60,7 @@ if (allow && !isMobile()) {
 	var version = document.querySelector('script[data-main]').getAttribute('data-main').split('=')[1];
 	require.config({
 		//urlArgs: "v=" + document.querySelector('script[data-main]').getAttribute('data-main').split('=')[1],
-		baseUrl: js_git_path,
+		baseUrl: location.hostname == 'localhost' ? js_local_path : js_git_path,
 		paths: {
 			login: ["app/login.js?v=" + version, js_local_path + "app/login.js?v=" + version],
 			utils: ["utils.js?v=" + version, js_local_path + "utils.js?v=" + version],
@@ -298,7 +298,7 @@ if (allow && !isMobile()) {
 		})
 	}, function (err) {
 		var failedId = err.requireModules && err.requireModules[0];
-		//alert('Failed to load ' + failedId);
-		//location.reload();
+		alert('Failed to load ' + failedId);
+		location.reload();
 	});
 }

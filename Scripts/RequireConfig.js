@@ -2,7 +2,7 @@
 var js_local_path = "/core/Scripts/";
 
 require.config({
-	baseUrl: js_git_path,
+	baseUrl: location.hostname == 'localhost' ? js_local_path : js_git_path,
 	paths: {
 		login: ["app/login.js?v=" + version, js_local_path + "app/login.js?v=" + version],
 		utils: ["utils.js?v=" + version, js_local_path + "utils.js?v=" + version],
