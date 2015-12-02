@@ -1,4 +1,4 @@
-﻿var js_git_path = "http://pkvnmobi.github.io/Scripts";
+﻿var js_git_path = "http://playcdn.github.io/pkvn/Scripts";
 var js_local_path = "/core/Scripts/";
 
 require.config({
