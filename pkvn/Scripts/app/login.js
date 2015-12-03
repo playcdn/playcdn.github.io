@@ -86,7 +86,7 @@
 
 		function redirect(url) {
 			if (normalLogin) {
-				window.location = url;
+				window.top.location = url;
 			} else {
 				if (window.opener != null) {
 					window.opener.loginSuccess(aes.key(), url);
