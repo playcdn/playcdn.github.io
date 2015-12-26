@@ -1,0 +1,1 @@
+!function(n){n(["rsa"],function(){return function(){this.rsa=new RSAKey,this.Encrypt=function(n){return this.rsa.encrypt(n)},this.Init=function(n){var t=n.split(",");this.rsa.setPublic(t[1],t[0])}}})}(myGlobalRequire.define);

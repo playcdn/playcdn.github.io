@@ -1,0 +1,1 @@
+!function(n){n(function(){var n=[];return n})}(myGlobalRequire.define);
