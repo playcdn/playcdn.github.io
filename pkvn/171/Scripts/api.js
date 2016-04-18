@@ -44,9 +44,10 @@
 							var errText = $(plainText).find('errtext').text();
 						}
 					} catch (err) {
-						//var errCode = json.errcode;
-						//var errText = json.errtext;
-						//var result = json.result;
+						var json = $.parseJSON(plainText);
+						var errCode = json.errcode;
+						var errText = json.errtext;
+						var result = json.result;
 						//if (errCode.length == 4) {
 						//    new translate().warning("Session Expired", "", null, AlertError);
 						//} else {
