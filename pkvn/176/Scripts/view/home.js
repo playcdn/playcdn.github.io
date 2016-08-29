@@ -4,8 +4,8 @@ define(["jquery", "api", "utils", "translate"], function ($, api, utils, transla
 		//register events
 		return function () {
 			$('body').css('background', '#C1C4C6');
-			var is_mobile = utils.GetCurrentUrlParam('mobile') == 'force';
-			if (is_mobile) $('#jp_div').hide();
+			var is_mobile = utils.GetCurrentUrlParam('mobile');
+			if (is_mobile == 'force' || is_mobile == 'auto') $('#jp_div').hide();
 			else if($('#jp_tbl').length > 0) get_jackpot_winners();
 		}
 
