@@ -4,9 +4,9 @@ define(["jquery", "api", "utils", "translate"], function ($, api, utils, transla
 		//register events
 		return function () {
 			$('body').css('background', '#C1C4C6');
+			$('#jp_div').hide();
 			var is_mobile = utils.GetCurrentUrlParam('mobile');
-			if (is_mobile == 'force' || is_mobile == 'auto') $('#jp_div').hide();
-			else if($('#jp_tbl').length > 0) get_jackpot_winners();
+			if (is_mobile != 'force' && is_mobile != 'auto' && $('#jp_tbl').length > 0) get_jackpot_winners();
 		}
 
 		//show jackpot winners table
@@ -48,6 +48,7 @@ define(["jquery", "api", "utils", "translate"], function ($, api, utils, transla
 						// cards
 						var cards = com_html + '&nbsp;&nbsp;&nbsp;' + ply_html;
 						$('#jp_tbl').append('<tr><td>' + type_html + '</td><td>' + name + '</td><td>' + table_id + '</td><td>' + date + '</td><td>' + cards + '</td><td>' + amount + '</td></tr>');
+						$('#jp_div').show();
 					});
 				}
 			});
