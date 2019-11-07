@@ -39,16 +39,11 @@
         }
 
         function setAvatarSuccess(result, errCode, errText) {
-            alert(result);
             closedWindow();
-            //console.log(result);
-            //console.log(errCode);
-            //console.log(errText);
         }
 
         function setAvatarFailed(errCode, errText) {
-            //console.log(errText);
-            //alert(errText);
+
         }
 
         function createPage() {
