@@ -3,10 +3,7 @@ var LoadPage;
 (function (require) {
 	require(["jquery", "api", "translate", "utils"], function ($, api, translate, utils) {
 		var single_login_count = 0;
-		console.log('mainjs before document ready');
 		$(document).ready(function () {
-			console.log('mainjs after document ready');
-			alert($('#DisableAutoMobileSite').val());
 			singleLogin(1);
 			$('.error').click(function () {location.reload();})
 			try {

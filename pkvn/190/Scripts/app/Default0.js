@@ -59,12 +59,16 @@ function isMobile() {
     var param = window.location.search;
     if (!new RegExp("(mobile=)(.*)").test(param))
         param = param.length == 0 ? "?mobile=" + mobile : param + "&mobile=" + mobile;
-    var isMobileDevice = mobile == "auto" && (/Mobi/i).test(navigator.userAgent);
-    if (mobile == "force" || isMobileDevice) {
-        isMobile = true;
-        location.href = "/m/" + param;
-    }
-    return isMobile;
+	var isMobileDevice = mobile == "auto" && (/Mobi/i).test(navigator.userAgent);
+	var disableAutoMobile = false;
+	
+	if ($('#DisableAutoMobileSite').val() == 'True') disableAutoMobile = true;
+
+	if (mobile == "force" || (isMobileDevice && !disableAutoMobile)) {
+		isMobile = true;
+		location.href = "/m/" + param;
+	}
+	return isMobile;
 }
 
 
