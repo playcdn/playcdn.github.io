@@ -60,8 +60,6 @@ function isMobile() {
     if (!new RegExp("(mobile=)(.*)").test(param))
         param = param.length == 0 ? "?mobile=" + mobile : param + "&mobile=" + mobile;
 	var isMobileDevice = mobile == "auto" && (/Mobi/i).test(navigator.userAgent);
-
-	alert(disableAutoMobile);
 	if (mobile == "force" || (isMobileDevice && !disableAutoMobile)) {
 		isMobile = true;
 		location.href = "/m/" + param;
