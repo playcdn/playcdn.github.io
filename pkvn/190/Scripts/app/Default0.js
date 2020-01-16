@@ -61,8 +61,8 @@ function isMobile() {
         param = param.length == 0 ? "?mobile=" + mobile : param + "&mobile=" + mobile;
 	var isMobileDevice = mobile == "auto" && (/Mobi/i).test(navigator.userAgent);
 	var disableAutoMobile = false;
-	
-	if ($('#DisableAutoMobileSite').val() == 'True') disableAutoMobile = true;
+	 
+	if (document.getElementById("DisableAutoMobileSite").value === 'True') disableAutoMobile = true;
 
 	if (mobile == "force" || (isMobileDevice && !disableAutoMobile)) {
 		isMobile = true;
