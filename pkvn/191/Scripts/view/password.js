@@ -79,6 +79,7 @@
 			if (typeof simpleMode !== 'undefined') {
 				if (simpleMode == 2) {
 					$('#pwdMenuQuestion').click();
+					$('#tblPasswordMenu').css('display','none');
 				}
 			}
 			
