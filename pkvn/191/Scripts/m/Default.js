@@ -79,6 +79,14 @@ if (allow) {
 					$("#menuBar").slideToggle(400);
 				}).css({ 'cursor': 'pointer', 'visibility': 'visible' });
 
+				/***  Download Button Public ***/
+				var btnDownloadPublic = $('#btnDownloadPublic');
+				if (btnDownloadPublic.prop('tagName') == 'A') btnDownloadPublic.attr('href', 'javascript:void(0)').removeAttr('target');
+				btnDownloadPublic.click(function () {
+					$('#frameMain').attr('src', '/core/Download.aspx' + param);
+					$("#menuBar").slideToggle(400);
+				}).css({ 'cursor': 'pointer', 'visibility': 'visible' });
+
 				/*** Sign In ***/
 				var btnSignIn = $('.SITELOGIN[method=login]');
 				var signInTag = btnSignIn.prop('tagName');
