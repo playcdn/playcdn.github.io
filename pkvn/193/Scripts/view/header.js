@@ -1,5 +1,5 @@
 ﻿(function (define) {
-define(["jquery", "api", "utils"], function ($, api, utils) {
+define(["jquery", "api", "utils"], function ($, api, utils,jqueryModal) {
 		var requirePage;
 		var requireHome;
 		return function (loadPage, loadHome) {
