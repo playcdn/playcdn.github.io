@@ -214,7 +214,7 @@
 				var settled = utils.Money(parseFloat(json[i].settled), 2);
 				var currBalance = utils.Money(parseFloat(json[i].currBalance), 2);
 				var wl_style = parseFloat(json[i].winLose) < 0 ? "color:red;font-weight:bold" : parseFloat(json[i].winLose) > 0 ? "font-weight:bold" : "";
-				var stmt_class = parseFloat(json[i].settled) != 0 ? "stmtSettled" : "";
+				var stmt_class = parseFloat(json[i].settled) != 0 ? "stmtSettled" : "stmtSettled";
 				$('#tblStatementDays > tbody').append('<tr><td class="stmtDate"><span class="stmtDateS1">' + date + '</span> (<span class="translate">' + day + '</span>)' + '</td><td>' + stakePlaced + '</td><td style="' + wl_style + '">' + winLose + '</td><td>' + commission + '</td><td class="' + stmt_class + '">' + settled + '</td><td style="bold">' + currBalance + '</td><tr>');
 			}
 			//impelment table

@@ -271,21 +271,21 @@ if (allow && !isMobile()) {
 			
 				var api = new API();
 				/***WContent***/
-				$.getJSON("/info/wcontent", function (data) {
-					var elem = document.getElementsByTagName("*");
-					for (var i = 0; i < elem.length; i++) {
-						var attrs = elem[i].attributes;
-						for (var m = 0; m < attrs.length; m++) {
-							if (attrs[m].nodeName.indexOf('wcontent') === 0) {
-								var attrName = attrs[m].nodeName.split('-');
-								if (attrName.length > 1)
-									elem[i].setAttribute(attrName[1], data[attrs[m].nodeValue]);
-								else
-									elem[i].innerHTML = data[attrs[m].nodeValue];
-							}
-						}
-					}
-				});
+				// $.getJSON("/info/wcontent", function (data) {
+				// 	var elem = document.getElementsByTagName("*");
+				// 	for (var i = 0; i < elem.length; i++) {
+				// 		var attrs = elem[i].attributes;
+				// 		for (var m = 0; m < attrs.length; m++) {
+				// 			if (attrs[m].nodeName.indexOf('wcontent') === 0) {
+				// 				var attrName = attrs[m].nodeName.split('-');
+				// 				if (attrName.length > 1)
+				// 					elem[i].setAttribute(attrName[1], data[attrs[m].nodeValue]);
+				// 				else
+				// 					elem[i].innerHTML = data[attrs[m].nodeValue];
+				// 			}
+				// 		}
+				// 	}
+				// });
 
 				/***API***/
 				var subActions = "";
