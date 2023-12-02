@@ -24,7 +24,7 @@
         }
         function getDepositSuccess(result, errCode, errText) {
             var json = $.parseJSON(result);
-            console.log(json);
+            // console.log(json);
             //var qrOptions = {
             //    text: "https://ytl.pkvn.mobi",
             //    };
