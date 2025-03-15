@@ -62,7 +62,7 @@
 
 						var result = data[i].res;
 
-						if (data[i].title.ToString() === "Games - PKV Sports") {
+						if (data[i].title === "Games - PKV Sports") {
 							result = "<span class='more' onclick='ViewSportTicketDetails(\"" + result + "\");'>" + result + "</span>";
 						}
 
