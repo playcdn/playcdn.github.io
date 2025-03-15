@@ -1,4 +1,4 @@
-﻿(function (define) {
+(function (define) {
 	define(["jquery", "api", "utils", "translate"], function ($, api, utils, translate) {
 		//initialize game detail object
 		var gd = new gameDetail();
@@ -18,10 +18,6 @@
 		var gdpage = 1;
 		var gddate = "";
 		var gddatedisplay = "";
-		function ViewSportTicketDetails(eRes) {
-			//document.cookie = "gameid=" + gameId;
-			window.open("https://afbsportlogin001.pkvn.mobi/ticket/" + eRes, "_blank", "width=950,height=600");
-		}
 		function gameDetail() {
 			this.data = new Object();
 			this.Show = function (page, date, gameId, dateDisplay) {
@@ -244,3 +240,7 @@
 		}
 	})
 }(myGlobalRequire.define));
+
+function ViewSportTicketDetails(eRes) {
+	window.open("https://afbsportlogin001.pkvn.mobi/ticket/" + eRes, "_blank", "width=950,height=600");
+}
