@@ -3,6 +3,8 @@ try { if (window.top.location.hostname !== window.location.hostname) { checkIfra
 catch (err) { checkIframe(); }
 
 function checkIframe() {
+	if (sessionStorage.getItem('referrer') == null)
+		sessionStorage.setItem('referrer', document.referrer);
 	var iframe = 'off';
 	try { iframe = document.querySelector('script[data-iframe]').getAttribute('data-iframe').toLowerCase(); } catch (err) { }
 	if (iframe == 'off') {
@@ -101,4 +103,5 @@ if (allow) {
 		});
 
 	}(myGlobalRequire.require));
+
 }
